@@ -1,4 +1,11 @@
-{% for article in last_articles %}
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.content }}</p>
+<h1>Bienvenue sur le blog des crepes bretonnes</h1>
+
+{% for post in last_posts %}
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content|truncatewords:80 }}</p>
+        <p><a href="{% url 'read' post.id %}">Lire la suite</a></p>
+    </div>
+{% empty %}
+    <p>Pas d'article pour le moment.</p>
 {% endfor %}
