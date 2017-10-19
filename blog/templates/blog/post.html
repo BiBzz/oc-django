@@ -1,0 +1,4 @@
+<h1>{{ post.title }} <span class="small">{{ post.category }}</span></h1>
+<p class="info">Rédigé par {{ post.author }} le {{ post.date|date:"DATE_FORMAT" }}</p>
+<p class="content">{{ post.content|linebreaks }}</p>
+<a href="{% url 'home' %}">Retour à la liste des articles</a>
